@@ -19,15 +19,12 @@ public class Deck : MonoBehaviour {
 	public Sprite cardFront;
 	public Sprite cardFrontGold;
 	
-	
-	// Prefabs
 	public GameObject prefabSprite;
 	public GameObject prefabCard;
 
 	[Header("Set Dynamically")]
 
 	public PT_XMLReader					xmlr;
-	// add from p 569
 	public List<string>					cardNames;
 	public List<Card>					cards;
 	public List<Decorator>				decorators;
@@ -35,11 +32,9 @@ public class Deck : MonoBehaviour {
 	public Transform					deckAnchor;
 	public Dictionary<string, Sprite>	dictSuits;
 
-
-	// called by Prospector when it is ready
 	public void InitDeck(string deckXMLText) {
-		// from page 576
-		if( GameObject.Find("_Deck") == null) {
+		if( GameObject.Find("_Deck") == null)
+        {
 			GameObject anchorGO = new GameObject("_Deck");
 			deckAnchor = anchorGO.transform;
 		}
